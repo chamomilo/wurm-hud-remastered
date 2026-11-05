@@ -1,10 +1,24 @@
 # High-res HUD in Wurm HUD Remastered
 
-Compared with the latest public standalone release: [High-res HUD v0.8.7](https://github.com/chamomilo/Wurm-HighRes-HUD/releases/tag/v0.8.7).
+Compared with the standalone baseline: [High-res HUD v0.8.7](https://github.com/chamomilo/Wurm-HighRes-HUD/releases/tag/v0.8.7).
 
 The unified Inventory, Containers, Character, Chat, Events, Build/recipes,
 Healthbar, Select bar and Fighting HUD retain their native gameplay actions.
 
+- K opens the skill browser with cards for all 138 skills, groups and
+  characteristics. Double-click a skill or use Build skill help to open its card.
+  Overview, Status, Actions, Skillgain, Titles, Relations and Wiki share the same
+  structure. Cards include themed artwork, current-state calculations, skill
+  milestones and links to related skills. Skillgain shows gain chance and gain
+  amount separately, current modifiers and gain per hour when inputs permit.
+- Remastered owns the windows it replaces when SkloGraphics is also installed.
+  Character, Skills, Chat, Events, Menu, Rename and Journal use the Remastered
+  presentation while retaining native models, input, history and saved state.
+  Unrelated SkloGraphics features remain available. Compatibility covers either
+  hook order and an older shared high-res UI SDK loaded first.
+- Mod-authored interface text supports English, Brazilian Portuguese, German
+  and Russian, including skill explanations and generated calculation labels.
+  Original external Wiki excerpts keep their source language.
 - Pin any carried inventory or equipment item, including nested bag contents,
   through Pin to HUD in its normal context menu. One left click activates the
   exact item as a tool; a double click opens a container. Right click keeps its
@@ -24,6 +38,11 @@ Healthbar, Select bar and Fighting HUD retain their native gameplay actions.
   1 kg each of clay and sand; liquid ingredients reserve only the required mass.
 - Glowing server-added metal name prefixes are recognized. Actual temperature,
   mass and the chosen result metal still determine whether material is usable.
+- Metal recipe variants share one catalogue row. Multiple options use a localized
+  metal suffix; a single option shows its metal and is selected immediately.
+  Only catalogued metals are offered. Selection switches the concrete recipe,
+  requirements and model, including gold/silver altars. Material-neutral
+  assemblies inherit their parts' options; alloy inputs keep their own metals.
 - For an unfinished item, select a row in Remaining to finish or a material
   in the store. Continue and queue buttons keep using that component type until
   another is chosen. If it runs out, crafting stops. Reordering the store

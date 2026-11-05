@@ -1,13 +1,14 @@
 # Startup Screen in Wurm HUD Remastered
 
-Compared with the latest public standalone release: [Startup Screen v0.5.2](https://github.com/chamomilo/wurm-highres-startup/releases/tag/v0.5.2).
+Compared with the standalone baseline: [Startup Screen v0.5.2](https://github.com/chamomilo/wurm-highres-startup/releases/tag/v0.5.2).
 
-Illustrated 3840 x 2160 JPEG loading screens retain the native loading text,
-progress display and reconnect controls.
+Illustrated 1920 x 1080 JPEG loading screens retain the native loading text,
+progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain supported.
 
-- Three credited Sklotopolis scenes extend the collection to thirteen:
+- Four credited Sklotopolis scenes extend the collection to fourteen:
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
-  whose pinto horse looks into the dug pit. Titles and source credits are on
+  whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
+  showing a copper-still cellar. Titles and source credits are on
   the images and preserved with the embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five
   seconds without showing any usable image twice in one loading session,
