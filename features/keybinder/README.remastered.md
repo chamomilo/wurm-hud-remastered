@@ -36,6 +36,11 @@ target selection and the existing command catalogues.
   their action, tool and target selections. This metadata survives duplication
   and export/import. Existing Custom steps stay custom until explicitly changed.
 
+Resizable dialogs reserve a separate native footer for the resize corner, so
+scrollbars do not occupy its space. Target and other dropdown menus are bounded
+to the visible screen even when their parent window is oversized or restored
+partly offscreen. The native option selection and dismissal remain unchanged.
+
 Existing bindings, account data and custom file paths are retained. Mutable
 legacy descriptor preferences use mods/keybinder.config, keeping the disabled
 standalone loader descriptor from being recreated. The HUD tag is inside the

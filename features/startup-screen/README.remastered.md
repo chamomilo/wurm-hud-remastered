@@ -5,10 +5,12 @@ Compared with the standalone baseline: [Startup Screen v0.5.2](https://github.co
 Illustrated 1920 x 1080 JPEG loading screens retain the native loading text,
 progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain supported.
 
-- Four credited Sklotopolis scenes extend the collection to fourteen:
+- The fifteen-screen collection includes four credited Sklotopolis scenes:
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
   whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
-  showing a copper-still cellar. Titles and source credits are on
+  showing a copper-still cellar. Troll King Slayer (Cudlekinz) adds an arena
+  battle without painted text or UI.
+  Earlier titles and source credits are on
   the images and preserved with the embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five
   seconds without showing any usable image twice in one loading session,

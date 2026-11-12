@@ -13,6 +13,11 @@ camera and Keybinder modules are enabled.
   Disable it and restart the whole client to omit the camera completely.
 - The separate updater is removed from this embedded component. Camera commands
   and user data paths keep their original namespaces and compatibility.
+- With this module enabled, Remastered owns the camera when SkloGraphics 0.2.9
+  is present. Its built-in camera, wheel zoom and automatic camera-binding
+  migration are suppressed; saved `change_view` bindings toggle Remastered.
+  SkloGraphics world effects remain available. Disable this module and restart
+  to leave camera ownership with SkloGraphics.
 
 No new camera modes or gameplay changes are introduced beyond the published
 camera release. Existing state.properties and custom camera settings stay in use.

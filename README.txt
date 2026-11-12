@@ -1,14 +1,34 @@
-Wurm HUD Remastered 0.4.3
+Wurm HUD Remastered 0.4.10
 
 Eight selectable Wurm Unlimited client components in one installation, with one
-local settings page and one product version. Version 0.4.3 preserves Waypointer
-editor drafts and list state across language changes, adds current coordinates
-and elevation to the compass tooltip, and keeps native horse/passenger headings
-after embark. It includes the four-language UI corrections and Remastered
-presentation priority over overlapping SkloGraphics interfaces from 0.4.1.
-The fourteen-image startup library adds Need a brew ?, based on Wolfbane's
-Sklotopolis screenshot, with its source credit preserved.
-The component sections retain the earlier standalone migration information.
+local settings page and one product version.
+
+Changes in 0.4.10
+
+- A single completed click in the skill browser opens the selected skill card.
+- Child-skill headers show an explicit hierarchy, for example Mauls -> Small maul.
+  Item names keep their original wording without a parent-skill prefix.
+- Weapon overviews explain the effects on attack speed, damage and parrying.
+- The attack summary uses the shorter Damage factor label. Table cells wrap
+  without hiding values; text aligns left, numbers right, and cells align at top.
+- Parry shows a calculated chance against a Venerable troll for the current
+  fighting style. Its hover explains the reference opponent and assumptions:
+  a ready weapon, neutral stance, current matching weapon QL or QL 50 if absent.
+  The weapon's attempt gate is no longer presented as the final parry chance.
+- Small Maul includes all six crushing/universal combat moves for the current
+  server-assigned kingdom in Actions and Overview. Other kingdoms are hidden.
+  The list shows skill requirements, duration and stamina cost; stance
+  requirements are available on hover. A skill above 19 is required to begin.
+- Updated text and layouts cover English, Brazilian Portuguese, German and
+  Russian, including narrow windows and all five reading-size settings.
+
+Earlier corrections included in this update
+
+This release also includes compact server forms and automatic scrollbar hiding,
+blank skill-card fixes, the Metal altar caption, the compact bulk transfer form,
+SkloGraphics expanded cave-buffer support, and the Timers menu mapping to Alarm
+Clock. Keybinder, crafting, Waypointer, native camera behavior and the fifteen
+startup screens retain the integrated updates described in the sections below.
 
 Download the latest ZIP (https://github.com/chamomilo/wurm-hud-remastered/releases/latest)
 
@@ -24,7 +44,7 @@ required. Close the entire game client and WurmLauncher before installation.
    highres-hud, highres-startup, keybinder, wurm-highres and wurm-waypointer.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.4.3.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.4.10.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -33,7 +53,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.4.3.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.4.10.jar
 
 One JAR contains all eight components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
@@ -355,10 +375,12 @@ Compared with the standalone baseline: Startup Screen v0.5.2 (https://github.com
 Illustrated 1920 x 1080 JPEG loading screens retain the native loading text,
 progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain supported.
 
-- Four credited Sklotopolis scenes extend the collection to fourteen:
+- The fifteen-screen collection includes four credited Sklotopolis scenes:
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
   whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
-  showing a copper-still cellar. Titles and source credits are on
+  showing a copper-still cellar. Troll King Slayer (Cudlekinz) adds an arena
+  battle without painted text or UI.
+  Earlier titles and source credits are on
   the images and preserved with the embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five
   seconds without showing any usable image twice in one loading session,
@@ -374,7 +396,7 @@ Compact PNG artwork keeps source alpha and window opacity. The pin is
 256 x 234, the clock and compass layers are 256 x 256, and shared
 material tiles repeat at 128 x 128. Native frames, buttons and icon
 atlas geometry are preserved. Other PNGs use lossless compression;
-the fourteen Full HD loading screens retain baseline JPEG encoding.
+the fifteen Full HD loading screens retain baseline JPEG encoding.
 
 Validation and source
 
