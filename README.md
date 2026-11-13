@@ -1,9 +1,47 @@
-# Wurm HUD Remastered 0.4.10
+# Wurm HUD Remastered 0.6.0
 
 Eight selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
 
-## Changes in 0.4.10
+## Changes in 0.6.0
+
+- Postbox adds a client-only mail workspace to native mailbox context menus.
+  Incoming, Send and physical-mailbox views use high-res UI and native inventory
+  behavior. Expand pending containers and inspect their supplied enchantments
+  before accepting anything. Accept/pay or return individual packages, or accept
+  and pay for the current list together when its complete cost is known.
+- Prepare one item, several items or filled/nested containers for one recipient.
+  Set COD and G/S/C/I prices directly in each item row; the name column is one
+  third of its former width. Request the authoritative server postage quote
+  with those prices retained, then use the separate final Send button. Editing or
+  cancelling a quote never sends items. Changing contents invalidates the quote.
+- Mail arrives in the physical mailbox. Take it into inventory before receiving
+  another batch. Pending manifests have local Inspect; received/outgoing real
+  inventory items retain native right-click actions and Examine.
+- Postbox captions, hints and status templates support English, Brazilian
+  Portuguese, German and Russian. Server messages and item/enchantment names
+  retain their original text. See README.txt for the complete mail workflow.
+- Includes the recent Timers -> Alarm Clock menu correction, startup update
+  progress window, recipe history/Craft action and world-tool crafting fixes.
+
+## Changes retained from 0.5.4
+
+- Troll King Slayer now includes its bottom title and the source credit
+  Cudlekinz | Sklotopolis in the collection's gold serif style.
+
+## Changes retained from 0.5.2
+
+- The recipe browser keeps per-session Back/Ahead history, including expanded
+  recipes, selection and scroll position; closing clears it.
+- Selected craftable recipe rows have a Craft action beside the magnifier.
+  New controls and hints are localized in all four interface languages.
+
+## Changes retained from 0.5.1
+
+- Ground crafting updates preserve weight and damage separately. Floor looms and
+  other heavy world tools remain usable after crafting batches.
+
+## Changes retained from 0.4.10
 
 - A single completed click in the skill browser opens the selected skill card.
 - Child-skill headers show an explicit hierarchy, for example Mauls -> Small maul.
@@ -44,7 +82,7 @@ required. Close the entire game client and WurmLauncher before installation.
    highres-hud, highres-startup, keybinder, wurm-highres and wurm-waypointer.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.4.10.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.6.0.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -53,7 +91,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.4.10.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.0.jar
 
 One JAR contains all eight components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
@@ -379,9 +417,9 @@ progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain 
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
   whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
   showing a copper-still cellar. Troll King Slayer (Cudlekinz) adds an arena
-  battle without painted text or UI.
-  Earlier titles and source credits are on
-  the images and preserved with the embedded collection.
+  battle with a gold title and the credit Cudlekinz | Sklotopolis.
+  Titles and source credits are on the images and preserved with the
+  embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five
   seconds without showing any usable image twice in one loading session,
   including the initial screen and loading fallbacks. After the collection is

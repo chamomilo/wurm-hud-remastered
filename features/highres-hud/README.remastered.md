@@ -5,8 +5,16 @@ Compared with the standalone baseline: [High-res HUD v0.8.7](https://github.com/
 The unified Inventory, Containers, Character, Chat, Events, Build/recipes,
 Healthbar, Select bar and Fighting HUD retain their native gameplay actions.
 
+- Postbox is available on world objects whose native server menus offer mail.
+  Inspect complete recursive incoming manifests and enchantments, accept/pay
+  or return whole packages, or accept the current known-price list together.
+  Received items enter the actual mailbox and retain normal inventory actions.
+  Sending supports several roots and filled containers, one recipient, per-root
+  COD and an authoritative server quote followed by an explicit Send action.
+  Native forms remain the transport; no server mod or invented item IDs are used.
+
 - K opens the skill browser with cards for all 138 skills, groups and
-  characteristics. Double-click a skill or use Build skill help to open its card.
+  characteristics. Click a skill or use Build skill help to open its card.
   Overview, Status, Actions, Skillgain, Titles, Relations and Wiki share the same
   structure. Cards include themed artwork, current-state calculations, skill
   milestones and links to related skills. Skillgain shows gain chance and gain
