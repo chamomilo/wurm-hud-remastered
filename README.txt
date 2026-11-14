@@ -1,9 +1,55 @@
-Wurm HUD Remastered 0.6.1
+Wurm HUD Remastered 0.7.0
 
-Eight selectable Wurm Unlimited client components in one installation.
+Nine selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
+
+NEW IN 0.7.0
+
+Quick Turn is integrated as a separate component with its own On/Off settings
+block. The switch applies after a complete client restart. It preserves the
+standalone numeric tuning and vqt console commands; console On/Off is temporary.
+Disable the standalone wurm-vehicles-quick-turn.properties before installation.
+
+Both maps use compact terrain artwork. The main map has an outside frame,
+four resize handles and a single-row toolbar that scrolls horizontally with
+the mouse wheel or dragging. It reopens at its default size. The mini-map has
+a lower-left resize grip and lower-right compass switch for north up / heading
+up. Terrain, markers, routes and deed borders rotate together; labels stay
+horizontal. Following uses continuous player coordinates with smooth easing.
+
+Mobs has a Show on map switch for the current filtered list. Both maps show
+peaceful types in green and aggressive types in red, independently of attitude
+and Fo effects. Points follow loaded client actors; hover shows the exact name.
+No server tracking requests are added. Exact animal and Exact age each have
+their own highlight selector, On/Off and color. Waypoints has a left-hand delete
+cross, no Copy column, and measured widths before allocating space to Name.
+
+Skills includes Faith, Favor and Alignment with deity-specific guidance,
+including Ivan. Religion uses confirmed own-player server messages instead
+of the client's unused Atheist default. If initially unknown, pray once to
+identify your deity; priest status needs a confirming server message. Opening
+any skill card selects Overview. Small maul Parry includes a Venerable troll
+sample with an iron QL90 small maul and full assumptions in its hover. Mining's
+diagonal image corruption is fixed without changing its source pixels; all
+138 skill images have been checked for the same upload-alignment defect.
+
+Build auto-picks tools from nested backpacks, including before choosing metal.
+Damaged stored items have a square hammer Repair button. Next QL estimates
+expected successful-action base quality, with assumptions in its hover.
+Single-stage recipes hide Continue. Required metal is red until selected,
+and ingredient requirements stay hidden until then. Container hovers include
+weight in inventory and world/Select, using available server data. Unknown
+nearby containers may need one bounded metadata request; unknown is not zero.
+
+Recipe-specific precious-metal quantities are preserved. On this Wurm Unlimited
+baseline, the precious group is gold, silver and electrum. There is no general
+one-tenth multiplier: small anvils require 2 kg for every supported metal;
+recipes specifying 100 g precious lumps retain that reduced requirement.
+
+Start Screens adds Death, based on Red Leaf's Sklotopolis screenshot, with
+the interface removed and new horror artwork. The collection now has 16 screens.
 
 FIXED IN 0.6.1
 
@@ -91,10 +137,11 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    alarms, camera state and mod settings outside the installation directory.
 2. Disable duplicate standalone loader descriptors by renaming .properties to
    .properties.disabled: WU-third_person_view, alarmclock, armor-material-colors,
-   highres-hud, highres-startup, keybinder, wurm-highres and wurm-waypointer.
+   highres-hud, highres-startup, keybinder, wurm-highres, wurm-waypointer and
+   wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.6.1.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.7.0.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -104,7 +151,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.1.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.0.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,
@@ -137,7 +184,8 @@ THE INCLUDED COMPONENTS
 - High-res Icons: the reviewed integrated item-icon pack.
 - Material Colors: the supported material palettes and masks; SkloGraphics
   retains unrelated lighting, shaders and world effects.
-- Startup Screen: the fifteen-screen loading collection and credited artwork.
+- Startup Screen: the sixteen-screen loading collection and credited artwork.
+- Quick Turn: responsive cart/wagon visual steering, hitch/rider/particle follow.
 
 Settings are on the local shared page; user data retains its legacy paths.
 Recent integrated changes also include the startup update progress window,
@@ -150,17 +198,24 @@ chrome supports reading size changes and opacity without changing game data.
 
 CHECK IN GAME AFTER INSTALLING
 
-1. Right-click a working spirit mailbox: Postbox appears and opens that box.
-2. Expand an incoming filled/nested container, inspect a child's enchantments,
-   then accept/pay one package. Verify it enters the mailbox and can be taken.
-3. Try a mixed incoming list and Accept and pay for all. Check the displayed
-   total, bank debit and physical contents. An occupied box blocks another batch.
-4. Send one ordinary item, then several items including a filled container and
-   COD. Check quote, recipient, prices and receipt on the receiving account.
-5. Edit/cancel a quote and change box contents: nothing sends until final Send.
-   Check refusal, insufficient funds and unavailable-service messages.
-6. Check narrow windows, all four languages, reading controls, ordinary Examine,
-   and coexistence with SkloGraphics. Also check recipes, bindings and timers.
+1. Disable the standalone Quick Turn descriptor manually. Toggle the integrated
+   Quick Turn block and restart: enabled carts/wagons turn promptly with their
+   hitch/rider; disabled mode uses native steering. Check boats and ridden horses.
+2. Open Mining and other skill cards: images are straight and each opening starts
+   on Overview. Inspect Faith/Favor/Alignment, pray to Ivan and check confirmed
+   deity. Inspect small maul Parry and its sample assumptions.
+3. Choose small anvil: metal is required/red, requirements are hidden until a
+   selection, the backpack mallet auto-picks, Continue is absent and Next QL is
+   numeric after materials/skills are known. Click Repair on a damaged tool.
+4. Hover filled containers in inventory and world/Select: weights appear when
+   metadata is known, without counting nested contents twice. Ordinary Open and
+   inventory transfers still work.
+5. Check terrain artwork on both maps, resize handles, scrolling main toolbar,
+   default main-map size on reopen and the mini-map compass toggle. Turn/move:
+   points, routes and deed borders rotate together; labels remain horizontal.
+6. Test Show on map with filtered peaceful/aggressive mobs and exact-name hovers;
+   Exact animal/age colors; waypoint delete cross. Select Death at the next start.
+   Check narrow windows, four languages, SkloGraphics, bindings, timers and Postbox.
 
 Native parser/serializer, UI/layout, regression and loader checks are automated.
 Live server transactions, real GPU rendering and delivery require these manual
@@ -175,5 +230,8 @@ The embedded high-res UI SDK is pinned to 0.4.15 and included once.
 
 Startup artwork credits remain on the images. The collection includes
 A Day of Climbing (FlpSilva), Avallone Docks (Encode), A Fine Work (Mlemow),
-Need a brew ? (Wolfbane), and Troll King Slayer (Cudlekinz | Sklotopolis).
+Need a brew ? (Wolfbane), Troll King Slayer (Cudlekinz | Sklotopolis), and
+Death (Red Leaf | Sklotopolis).
+Compact terrain artwork comes from the user-supplied Thources Minimap 1.0.0
+reference archive. Its executable mod classes are not included.
 See the published component guides and embedded notices for original projects.

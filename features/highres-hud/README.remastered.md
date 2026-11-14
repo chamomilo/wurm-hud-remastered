@@ -1,5 +1,16 @@
 # High-res HUD in Wurm HUD Remastered
 
+## Remastered 0.7.0
+
+Mining artwork has a lossless native upload-alignment fix; all skill images were
+audited. Skill cards add Faith/Favor/Alignment, Ivan guidance and the small-maul
+QL90 iron / Venerable troll sample. Every invocation starts on Overview. Religion
+uses confirmed own-player messages; pray once if unknown, rather than treating the
+unused client enum as Atheist. Build supports nested backpack tool auto-pick,
+visible hammer Repair buttons with a texture-independent fallback, expected base
+Next QL, required-metal highlighting and single-stage Continue hiding. Container
+weights appear in inventory and world/Select when server metadata is available.
+
 Compared with the standalone baseline: [High-res HUD v0.8.7](https://github.com/chamomilo/Wurm-HighRes-HUD/releases/tag/v0.8.7).
 
 The unified Inventory, Containers, Character, Chat, Events, Build/recipes,

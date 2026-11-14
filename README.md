@@ -1,7 +1,43 @@
-# Wurm HUD Remastered 0.6.1
+# Wurm HUD Remastered 0.7.0
 
-Eight selectable Wurm Unlimited client components in one installation, with one
+Nine selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.7.0
+
+- Integrated Quick Turn 1.0.1, with its own restart-only On/Off block. It keeps
+  cart/wagon, hitch, rider and particle steering behavior and session vqt commands.
+  Disable the standalone wurm-vehicles-quick-turn descriptor before installation.
+- Both maps use compact terrain artwork. The main map has an outside frame,
+  four resize corners, default size on reopening, and a single toolbar row with
+  horizontal mouse scrolling. The mini-map adds a resize grip and north/heading
+  compass switch; terrain, marks, routes and deed borders rotate while text stays
+  horizontal. Center, player arrow and navigation origin use continuous positions.
+- Mobs can show their filtered loaded list on both maps: peaceful types are green,
+  aggressive types red, independently of attitude/Fo. Exact names appear on hover.
+  Updates are bounded and do not request server tracking. Exact animal and Exact
+  age each have their own selector, On/Off and color. Waypoints moves Delete to a
+  left cross, removes Copy, and fits non-Name columns before allocating Name.
+- Added Faith, Favor and Alignment cards with Ivan guidance. Religion uses
+  confirmed own-player messages instead of the unused Atheist default. Pray once
+  if your deity is initially unknown. Every card opens on Overview. Small maul
+  Parry includes a Venerable troll / iron QL90 reference with assumptions on hover.
+  Mining's diagonal image corruption is repaired losslessly; all 138 skill images
+  have been audited for native upload row alignment.
+- Build auto-picks backpack tools before/after metal selection. Damaged store rows
+  have a visible animated hammer Repair button, including a missing-texture glyph.
+  Next QL estimates expected successful-action base quality. Single-stage recipes
+  hide Continue. Required metal is red and requirements wait for its selection.
+  Container hovers show available weights in inventory and world/Select.
+- Precious-metal requirements were audited per recipe: gold, silver and electrum
+  are the WU group. Small anvils correctly require 2 kg; recipes specifying 100 g
+  precious components retain those quantities. There is no universal 1/10 rule.
+- Added Death to the 16-screen startup collection, based on Red Leaf's Sklotopolis
+  screenshot, with the interface removed and new horror artwork. Credits remain.
+- New captions and generated hints cover all four languages. Full regression,
+  native layout/input, older-SDK, both SkloGraphics hook orders, packaged module
+  gates and actual ModLoader lifecycle checks passed. Live GPU/server checks
+  remain manual; see the installable README.txt checklist.
 
 ## Changes in 0.6.1
 
@@ -72,7 +108,7 @@ local settings page and one product version.
 This release also includes compact server forms and automatic scrollbar hiding,
 blank skill-card fixes, the Metal altar caption, the compact bulk transfer form,
 SkloGraphics expanded cave-buffer support, and the Timers menu mapping to Alarm
-Clock. Keybinder, crafting, Waypointer, native camera behavior and the fifteen
+Clock. Keybinder, crafting, Waypointer, native camera behavior and the sixteen
 startup screens retain the integrated updates described in the sections below.
 
 [Download the latest ZIP](https://github.com/chamomilo/wurm-hud-remastered/releases/latest)
@@ -86,10 +122,11 @@ required. Close the entire game client and WurmLauncher before installation.
    For existing Keybinder users, follow the migration instructions below.
 2. Rename old standalone loader descriptors from .properties to
    .properties.disabled: WU-third_person_view, alarmclock, armor-material-colors,
-   highres-hud, highres-startup, keybinder, wurm-highres and wurm-waypointer.
+   highres-hud, highres-startup, keybinder, wurm-highres, wurm-waypointer and
+   wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.6.1.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.7.0.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -98,9 +135,9 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.1.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.0.jar
 
-One JAR contains all eight components' code and their bundled resources.
+One JAR contains all nine components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
 their legacy locations. No saved bindings, waypoints, alarms or overrides are
 included. Avatar2 remains a separate mod.
@@ -168,7 +205,8 @@ HUD is ready. Existing component-specific language coverage is preserved.
 
 Shared client integration delivers server events to observers before display filters. Examine metadata is tied to its outgoing request, exact target and recipient; an unrelated vehicle response cannot modify a selected creature. Managed wheel bindings, camera zoom and map/portrait scrolling have explicit ownership. Module switches still require a full restart.
 
-Eight module switches follow, then the enabled components' original settings.
+Eight module switches and a separate Quick Turn block follow, then the enabled
+components' original settings.
 All modules default to enabled. Module switches apply after a complete client
 restart; a disabled module is not constructed and installs no hooks. Other
 settings identify immediate application or restart requirements.
@@ -420,11 +458,12 @@ Compared with the standalone baseline: [Startup Screen v0.5.2](https://github.co
 Illustrated 1920 x 1080 JPEG loading screens retain the native loading text,
 progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain supported.
 
-- The fifteen-screen collection includes four credited Sklotopolis scenes:
+- The sixteen-screen collection includes credited Sklotopolis scenes:
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
   whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
   showing a copper-still cellar. Troll King Slayer (Cudlekinz) adds an arena
   battle with a gold title and the credit Cudlekinz | Sklotopolis.
+  Death (Red Leaf | Sklotopolis) adds a reworked crimson-black death vortex.
   Titles and source credits are on the images and preserved with the
   embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five
@@ -441,13 +480,24 @@ Compact PNG artwork keeps source alpha and window opacity. The pin is
 256 x 234, the clock and compass layers are 256 x 256, and shared
 material tiles repeat at 128 x 128. Native frames, buttons and icon
 atlas geometry are preserved. Other PNGs use lossless compression;
-the fifteen Full HD loading screens retain baseline JPEG encoding.
+the sixteen Full HD loading screens retain baseline JPEG encoding.
+
+### Quick Turn
+
+Quick Turn 1.0.1 is integrated with a separate On/Off block in Remastered settings.
+The switch requires a complete client restart; disabled modules install no hooks.
+Cart/wagon, hitch, rider and particle presentation retain the original behavior.
+Native movement, collision, camera and outgoing packets remain under game control.
+Boats, ridden creatures, dragged carts and passenger-only seats are excluded.
+Legacy numeric tuning is read, while the Remastered switch owns startup enablement.
+The existing vqt status/on/off commands remain temporary session controls and are
+available in Keybinder with localized captions. Disable the standalone descriptor.
 
 ## Validation and source
 
 The release build checks component regressions, native UI/input/layout probes,
 four-language layouts, geometry, resource bytes and activation isolation. It
-also runs nineteen fresh packaged shared-loader scenarios and the complete
+also runs twenty-one fresh packaged shared-loader scenarios and the complete
 actual ModLoader lifecycle with all components enabled and all disabled.
 The SDK is pinned to high-res UI 0.4.15 and embedded exactly once, retaining
 font and component notices. The ZIP whitelist is checked against all three files.

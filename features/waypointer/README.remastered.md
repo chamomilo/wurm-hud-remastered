@@ -1,5 +1,17 @@
 # Waypointer in Wurm HUD Remastered
 
+## Remastered 0.7.0
+
+Both maps use compact terrain artwork. Main-map frame and four resize handles
+surround the content; the toolbar scrolls horizontally and reopening resets size.
+The mini-map has a resize grip and north/heading compass switch. Geometry rotates,
+labels stay horizontal, and continuous player positions keep following smooth.
+Mobs Show on map displays the filtered loaded actors with type-based green/red
+points and exact-name hover, without additional server tracking. Exact animal and
+Exact age each have independent selectors, On/Off and color. Waypoints uses a left
+delete cross, removes Copy and fits non-Name values before allocating Name width.
+Generated surface/cave hints and controls support all four interface languages.
+
 Compared with the latest public standalone release: [Waypointer v1.10.11](https://github.com/chamomilo/wurm-waypointer/releases/tag/v1.10.11).
 
 Keep waypoints, compass navigation, the full map and minimap, deeds and highways,
