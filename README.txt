@@ -1,9 +1,15 @@
-Wurm HUD Remastered 0.6.0
+Wurm HUD Remastered 0.6.1
 
 Eight selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
+
+FIXED IN 0.6.1
+
+Fixed toolbelt icon recursion that could interrupt HUD rendering after login.
+Items without a new catalog icon keep their existing icon. Failed or invalid
+new textures also fall back to the existing icon.
 
 NEW IN 0.6.0: POSTBOX
 
@@ -88,7 +94,7 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    highres-hud, highres-startup, keybinder, wurm-highres and wurm-waypointer.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.6.0.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.6.1.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -98,7 +104,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.0.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.1.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,

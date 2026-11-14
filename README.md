@@ -1,7 +1,14 @@
-# Wurm HUD Remastered 0.6.0
+# Wurm HUD Remastered 0.6.1
 
 Eight selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.6.1
+
+- Fixed toolbelt icon recursion that could abort HUD rendering after login.
+- Missing, unreadable or invalid new catalog icons retain the existing item icon.
+- Added execution checks for native toolbelt icon/size calls, both belt sizes,
+  dragging, disabled replacement and incomplete-catalog fallback.
 
 ## Changes in 0.6.0
 
@@ -82,7 +89,7 @@ required. Close the entire game client and WurmLauncher before installation.
    highres-hud, highres-startup, keybinder, wurm-highres and wurm-waypointer.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.6.0.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.6.1.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -91,7 +98,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.0.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.6.1.jar
 
 One JAR contains all eight components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
