@@ -1,16 +1,23 @@
-Wurm HUD Remastered 0.8.1
+Wurm HUD Remastered 0.8.2
 
 Ten selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
 
+CHANGED IN 0.8.2
+
+Keybinder Plant, Plant in center and Sow select material inside the configured
+container using the server's actual available actions. Seeds, flowers, sprouts,
+seedlings and server-specific materials need no name/icon whitelist. Read-only
+asynchronous queries preserve native and SkloGraphics popup requests. The selected
+container stays active, and other containers are not searched.
+
 CHANGED IN 0.8.1
 
-Keybinder Plant and Plant in center select a sprout within the configured source
-container before sending the action, including with SkloGraphics ToolMenu. No
-popup needs to be opened first. The container stays active for the next press,
-and sprouts in other containers are not selected.
+Go to sleep uses direct YES/NO actions and the original native answer. The
+initial container planting fix covers native sprouts; 0.8.2 extends it to
+server-approved planting materials and Sow.
 
 CHANGED IN 0.8.0
 
@@ -327,7 +334,7 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.8.1.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.8.2.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -337,7 +344,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.1.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.2.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,

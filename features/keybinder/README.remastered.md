@@ -5,12 +5,13 @@ Compared with the latest public standalone release: [Keybinder v1.0.3](https://g
 Create action chains, Quick menus and Multi variants on a key, with tool and
 target selection and the existing command catalogues.
 
-- Plant and Plant in center resolve native sprouts inside the selected source
-  container, including nested contents, without depending on SkloGraphics popup
-  objects. The outgoing source is the sprout while the container remains active
-  for later presses. Direct sprouts and unrelated actions retain their source;
+- Plant, Plant in center and Sow resolve material inside the selected container
+  and its descendants by checking the server's actual available actions. This
+  supports seeds, flowers, sprouts, seedlings and server-specific planting items
+  without guessing by names or images. Read-only queries run asynchronously;
+  their wire IDs cannot hijack native or SkloGraphics popups. The container stays
+  active for later presses. Direct items and unrelated actions retain their source;
   missing/unloaded contents retain the original server-side container path.
-  Generic seeds/flowers support is not included in Remastered 0.8.1.
 
 - The queue monitor recovers actions already running when a binding starts and
   follows consecutive server timers. Current retains the sent command name and

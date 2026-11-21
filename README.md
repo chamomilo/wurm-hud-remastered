@@ -1,16 +1,22 @@
-# Wurm HUD Remastered 0.8.1
+# Wurm HUD Remastered 0.8.2
 
 Ten selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
 
+## Changes in 0.8.2
+
+- Keybinder's Plant, Plant in center and Sow select planting material inside the
+  configured container using the server's actual available actions. Seeds,
+  flowers, sprouts, seedlings and server-specific materials need no name/icon
+  whitelist. Private asynchronous queries preserve native/SkloGraphics popup
+  requests. The container stays active and other containers are not searched.
+
 ## Changes in 0.8.1
 
-- Go to sleep uses two direct YES/NO actions instead of radio choices and Send;
-  each retains the original native question and answer handling.
-- Keybinder's Plant and Plant in center resolve a native sprout inside the
-  selected container, including SkloGraphics ToolMenu compatibility. The
-  container stays active for later presses. Generic seeds/flowers support is
-  a separate unfinished change and is not included in this release.
+- Go to sleep uses direct YES/NO actions with the original native answer.
+- Keybinder's initial container fix supports native sprouts for Plant and
+  Plant in center. Version 0.8.2 extends this to server-approved planting
+  materials and Sow.
 
 ## Changes in 0.8.0
 
@@ -47,6 +53,8 @@ local settings page and one product version.
   intact; an ordinary custom name containing the word rare keeps that word.
 - The combined release also includes selectable Launcher compatibility and the
   expanded skill research cards, formulas, conditions and localized Overviews.
+- Go to sleep uses two direct YES/NO actions instead of radio choices and Send;
+  each retains the original native question and answer handling.
 
 ## Changes in 0.7.4
 
@@ -231,7 +239,7 @@ required. Close the entire game client and WurmLauncher before installation.
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.8.1.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.8.2.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -240,7 +248,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.1.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.2.jar
 
 One JAR contains all ten components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
