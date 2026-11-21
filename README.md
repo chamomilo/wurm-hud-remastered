@@ -1,7 +1,53 @@
-# Wurm HUD Remastered 0.7.4
+# Wurm HUD Remastered 0.8.1
 
-Nine selectable Wurm Unlimited client components in one installation, with one
+Ten selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.8.1
+
+- Go to sleep uses two direct YES/NO actions instead of radio choices and Send;
+  each retains the original native question and answer handling.
+- Keybinder's Plant, Plant in center and Sow select planting material inside the
+  configured container using the server's actual available actions. Seeds,
+  flowers, sprouts, seedlings and server-specific materials need no name/icon
+  whitelist. Private asynchronous queries preserve native/SkloGraphics popup
+  requests. The container stays active and other containers are not searched.
+
+## Changes in 0.8.0
+
+- The full map's title and status text now sit directly on the wooden top/bottom
+  frame in the shared ivory text colour, without separate black plates. The
+  toolbar also overlays the map without a black strip. Terrain gains 86 pixels
+  of height at the same window size.
+- Overflowing map controls have fixed left/right arrow buttons. Wheel/drag
+  scrolling remains available; increasing the window width returns the strip
+  to its first button. Close is fixed to the upper-right frame corner and stays
+  reachable independently of toolbar scrolling.
+- Title/status full hints and new scroll-arrow hints cover all four languages.
+- Tree Hunter's Species list now includes all 10 native bush species alongside
+  the existing 15 trees. Bushes use the same age/pruning/harvest/sprout filters;
+  saved tree selections retain their IDs and bushes have separate stable IDs.
+
+- Drag the full map by its wooden frame; map-body gestures continue to pan.
+- Show on map includes its marker legend: red/green circles for Mobs and a blue
+  star for Containers, with measured room for all four localized captions.
+- Creature species and age selectors refresh loaded counts on opening. Only
+  nonzero counts have a suffix; zero-count options remain selectable. Rule
+  captions also omit zero suffixes. Counts ignore outline enable/disable state.
+  Exact animal/age each use one ordinary row: switch, narrow dropdown, swatch,
+  Color. Their localized names are the empty/default choices, without headings.
+- Startup rotation uses persistent presentation history and session/date filters;
+  all settings and feature state now share one config with legacy migration.
+- Stone-wall continuation retains the trowel as a reusable tool and can fill the
+  native action queue without treating the trowel as one consumable component.
+- Inventory items can be dropped onto Pin to HUD container shortcuts through
+  the original client transfer handler, preserving multiple selection and Shift
+  quantity prompts, including nested/equipped containers and compact shortcuts.
+- Name sorting in inventory/equipment and container windows ignores the native
+  rarity prefix. Full names, rarity colours, grouping and numeric sorts remain
+  intact; an ordinary custom name containing the word rare keeps that word.
+- The combined release also includes selectable Launcher compatibility and the
+  expanded skill research cards, formulas, conditions and localized Overviews.
 
 ## Changes in 0.7.4
 
@@ -186,7 +232,7 @@ required. Close the entire game client and WurmLauncher before installation.
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.7.4.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.8.1.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -195,9 +241,9 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.4.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.1.jar
 
-One JAR contains all nine components' code and their bundled resources.
+One JAR contains all ten components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
 their legacy locations. No saved bindings, waypoints, alarms or overrides are
 included. Avatar2 remains a separate mod.
@@ -265,17 +311,22 @@ HUD is ready. Existing component-specific language coverage is preserved.
 
 Shared client integration delivers server events to observers before display filters. Examine metadata is tied to its outgoing request, exact target and recipient; an unrelated vehicle response cannot modify a selected creature. Managed wheel bindings, camera zoom and map/portrait scrolling have explicit ownership. Module switches still require a full restart.
 
-Eight module switches and a separate Quick Turn block follow, then the enabled
-components' original settings.
+Module switches, including Launcher compatibility and Quick Turn, precede the
+enabled components' settings.
 All modules default to enabled. Module switches apply after a complete client
 restart; a disabled module is not constructed and installs no hooks. Other
 settings identify immediate application or restart requirements.
 
-Language is saved in ~/.chamomilo/remastered.properties; a previous shared
-language is read on first use without changing its old file. Module overrides
-in ~/.chamomilo/mod-settings/wurm-hud-remastered.properties take precedence over
-modules.<module-id>.enabled in the descriptor. Feature settings retain their
-original files. Here ~ means the user's home directory.
+Settings, language, window state, feature preferences and startup presentation
+history share ~/.chamomilo/remastered.properties. Here ~ is the user's home.
+Legacy per-module files are imported only when that module has no records in
+the common config. Existing common records win; old files remain untouched and
+are not written again. Concurrent feature saves preserve other sections, and
+runtime saves preserve pending values that require a restart.
+
+Waypoint and keybind data retain their existing separate files and custom paths.
+Native client data, binary map caches, diagnostic exports and launcher snapshots
+retain their own data formats; they are not additional settings files.
 
 Settings and language are local. Remastered includes no updater, release-check
 client or update catalogue. Existing network-backed feature functions, such as
@@ -530,10 +581,13 @@ progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain 
   (Red Leaf | Sklotopolis) uses a deep abyss, layered clouds and falling fragments.
   Titles and source credits are on the images and preserved with the
   embedded collection.
-- Choose a fixed named screen or Random. Random changes images every five
-  seconds without showing any usable image twice in one loading session,
-  including the initial screen and loading fallbacks. After the collection is
-  exhausted, the last screen stays visible. Reconnect starts a fresh session.
+- Choose a fixed named screen or Random. Random starts with a never-shown or
+  least-recently-shown usable image. Subsequent five-second slides exclude images
+  shown this loading session, then prefer those not shown on today's local date.
+  If needed, today's images return; after exhausting the session, its flags reset
+  and rotation continues. Reconnect begins a new loading session. The common
+  config stores each actual presentation's UTC timestamp and current-session
+  flag. Fixed selections are recorded too; discarded prefetch is never recorded.
 - Images decode asynchronously and load directly from the single Remastered
   JAR. Settings are on the common local page and apply after a full restart.
 

@@ -1,9 +1,104 @@
-Wurm HUD Remastered 0.7.4
+Wurm HUD Remastered 0.8.1
 
-Nine selectable Wurm Unlimited client components in one installation.
+Ten selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
+
+CHANGED IN 0.8.1
+
+Keybinder Plant and Plant in center select a sprout within the configured source
+container before sending the action, including with SkloGraphics ToolMenu. No
+popup needs to be opened first. The container stays active for the next press,
+and sprouts in other containers are not selected.
+
+CHANGED IN 0.8.0
+
+Launcher compatibility is a separately selectable module. After confirmed login
+it sends one quiet /alts request in the existing connection and exports the
+observed roster, Character Screen paperdoll image, current position, nearest
+known settlement, skills, owned inventory/equipment/container metadata and the
+observed map with a player arrow. No separate Steam login or character creation
+is performed. Servers without /alts return an explicit unavailable/no-response
+state. Unknown container contents and unknown settlements are not invented.
+
+Sklo Launcher 0.4.0 sets the export directory for its child client. For an ordinary
+client start the fallback is user-home/.sklolauncher/hud-inbox. JSON/PNG snapshots
+are local and include character identity and inventory data; they are not uploaded.
+Exports continue while the launcher is closed and are imported on its next start.
+Normal disconnect captures before session cleanup. Crashed sessions retain entry
+avatar/location/map and show no data for dumps. The next successfully loaded
+session of the same alt fills those dumps with explicit source attribution.
+Keep a manual backup of launcher data. Automatic snapshot pruning is not included.
+
+Manual verification:
+1. Install this ZIP manually and launch a known character from Sklo Launcher.
+2. Check that /alts does not echo; only its correlated reply is hidden. Other
+   chat, combat, skill and manual examine messages must remain visible.
+3. After login inspect the alt data browser: skills, items, equipment, containers,
+   avatar and observed map/heading. Unknown contents must not appear as empty.
+4. Move/turn, log out normally, reopen the launcher and compare the final snapshot.
+5. Check a different server and a server without /alts. Saved cards must survive.
+6. Disable Launcher synchronization, restart, and confirm no new exports/requests.
+
+MAP, STARTUP AND COMMON SETTINGS IN 0.8.0
+
+The full map title and status now sit on the existing wooden frame in the shared
+ivory UI text colour. Both black caption plates are removed. The terrain gains
+86 pixels of height without increasing the window size. Long captions use an
+ellipsis with full localized hints; the lower-left resize grip remains clear.
+There is no black backing under the upper controls: the map extends behind them.
+
+When the toolbar overflows, fixed left/right arrow buttons scroll its contents.
+Wheel/drag scrolling is retained. Increasing the window width returns the strip
+to the first button. The Close button is fixed to the upper-right frame corner,
+independent of the toolbar and always reachable. All new hints are localized.
+
+Tree Hunter's Species list now includes all ten bush species supported by the
+pinned client, alongside all fifteen trees. Normal, mycelium and enchanted bush
+tiles use the existing age/pruning/harvest/sprout filters. Existing saved tree
+IDs are retained; bushes have separate IDs. Legacy received data keeps unknown
+fruit status unknown. New species labels are translated in all four languages.
+
+All mod settings, language, window state and feature preferences now share
+user-home/.chamomilo/remastered.properties. A module imports its old settings
+only when it has no records in that common file. Existing common records win;
+legacy files remain untouched and are no longer written. Waypoint and keybind
+data retain their separate files and custom paths. Map caches and explicit
+launcher/diagnostic exports remain data, not extra configuration files.
+
+Random startup screens begin with a never-shown or least-recently-shown usable
+image. Later five-second slides exclude the current session's shown images and
+prefer those not shown today (local date). If necessary today's images return;
+when all usable images are exhausted, the session flags clear and rotation
+continues. Reconnect starts a fresh loading session. Only actual presentation
+updates the timestamp and flag, including fixed choices; decoding does not.
+The history table is in the common config.
+
+Drag the full map by its wooden frame. Show on map contains red/green circles
+for Mobs and a blue star for Containers. Species and age selectors refresh
+loaded counts on opening; zero suffixes disappear without hiding any options.
+Stone-wall continuation keeps the inventory trowel in Tools and reuses it for
+queued actions. Expanded skill research cards and localized Overviews are also
+included in this combined release.
+
+Exact animal and Exact age are now two standard rows: ON/OFF, narrow dropdown,
+swatch and Color. Their names replace Choose animal/Choose age as defaults;
+there are no separate headings or extra selector rows.
+
+Drag inventory items onto a Pin to HUD container to move them into that exact
+container through the original client drop handler. Multiple selection and
+Shift quantity prompts are preserved. Nested/equipped containers and compact
+pins work without opening or activating the container.
+
+Inventory name sorting ignores the native rare/supreme/fantastic prefix, so
+rarity does not move a type into a separate alphabetical group. Full visible
+names, rarity colours, native groups and numeric columns are preserved.
+An ordinary custom name containing rare is not rewritten.
+
+Go to sleep now has two direct YES/NO buttons, without radio choices or Send.
+Each action uses the original native answer, including its hidden question ID.
+Both captions and the title follow the selected interface language.
 
 ADDED IN 0.7.4
 
@@ -68,7 +163,7 @@ prevent wrapped buffer slots from appearing at unrelated map locations.
 Surface mini-map zoom-out now covers up to 480 tiles per side instead of 160,
 so enlarged mini-map windows can show a wider area.
 Its contour interval, north/heading orientation, size and zoom are saved locally
-in .chamomilo/mod-settings/wurm-waypointer-ui.properties under your user home.
+in .chamomilo/remastered.properties under your user home.
 They survive window recreation, reconnects and restarts; saved dimensions fit
 the current HUD. Surface and cave zoom ranges remain independent.
 
@@ -232,7 +327,7 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.7.4.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.8.1.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -242,7 +337,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.4.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.1.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,
@@ -288,6 +383,24 @@ Other SkloGraphics interfaces and effects remain available. The shared window
 chrome supports reading size changes and opacity without changing game data.
 
 CHECK IN GAME AFTER INSTALLING
+
+For 0.8.0:
+
+1. Open the full map. The title and lower status sit directly on the wooden
+   rails without black plates. Terrain reaches the lower rail; labels stay clear.
+2. Shrink the window until controls overflow. Both arrows appear, scroll the
+   strip on completed clicks and stop at the endpoints. Release outside an arrow
+   to cancel. Wheel scrolling and horizontal dragging still work.
+3. Scroll the narrow toolbar, then widen the window slightly and fully. The
+   first button returns to the left; arrows disappear once all controls fit.
+4. With the strip scrolled, use the upper-right frame Close button. Reopen the
+   map and check lower-left resizing, fixed top/right anchors and normal panning.
+5. Check all four languages at narrow/default sizes. Long status text has a
+   full hover hint, the title clears Close and the footer clears the resize grip.
+6. In Tree Hunter, open Species and scroll to the bushes. Select a bush plus a
+   tree, apply age/harvest filters and enable the finder. Matching received tiles
+   should highlight. Switch languages and restart: saved species remain selected
+   (the finder itself still requires manual activation after a restart).
 
 For 0.7.4 and the retained map-resize fix:
 

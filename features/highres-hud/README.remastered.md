@@ -1,5 +1,21 @@
 # High-res HUD in Wurm HUD Remastered
 
+## Remastered 0.8.1
+
+Skill research covers 141 indexed skills, characteristics and religious values,
+with four-language Overviews, expanded formulas, conditions, native references,
+recipes, combat moves and spells. Current observed character/target/item data
+takes priority; unknown live inputs remain unknown. Reference calculations are
+separate and labelled. Faith, Favor and Alignment keep their own rules. Native
+formula coverage does not imply a final numeric calculator for every server-only
+branch; missing armour, resistance, cooldown or deity data stays explicit.
+
+Go to sleep has direct YES/NO actions using the original native answer. Pinned
+containers accept native inventory drops, including selected stacks and Shift
+quantity prompts. Name sorting ignores metadata-backed rarity prefixes while
+preserving full names and colours. Stone-wall continuation keeps the trowel as a
+reusable tool and supports the native action queue.
+
 ## Remastered 0.7.0
 
 Mining artwork has a lossless native upload-alignment fix; all skill images were
@@ -24,7 +40,7 @@ Healthbar, Select bar and Fighting HUD retain their native gameplay actions.
   COD and an authoritative server quote followed by an explicit Send action.
   Native forms remain the transport; no server mod or invented item IDs are used.
 
-- K opens the skill browser with cards for all 138 skills, groups and
+- K opens the skill browser with cards covering 141 indexed skills, religious values and
   characteristics. Click a skill or use Build skill help to open its card.
   Overview, Status, Actions, Skillgain, Titles, Relations and Wiki share the same
   structure. Cards include themed artwork, current-state calculations, skill

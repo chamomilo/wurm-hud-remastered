@@ -5,6 +5,14 @@ Compared with the latest public standalone release: [Keybinder v1.0.3](https://g
 Create action chains, Quick menus and Multi variants on a key, with tool and
 target selection and the existing command catalogues.
 
+- Plant, Plant in center and Sow resolve material inside the selected container
+  and its descendants by checking the server's actual available actions. This
+  supports seeds, flowers, sprouts, seedlings and server-specific planting items
+  without guessing by names or images. Read-only queries run asynchronously;
+  their wire IDs cannot hijack native or SkloGraphics popups. The container stays
+  active for later presses. Direct items and unrelated actions retain their source;
+  missing/unloaded contents retain the original server-side container path.
+
 - The queue monitor recovers actions already running when a binding starts and
   follows consecutive server timers. Current retains the sent command name and
   shows the actual game timer phase in parentheses. A brass divider separates it

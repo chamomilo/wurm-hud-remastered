@@ -1,5 +1,17 @@
 # Waypointer in Wurm HUD Remastered
 
+## Remastered 0.7.5
+
+Full-map title/status text is drawn directly on the wooden rails in the shared
+ivory colour, with no separate black plates. The reclaimed strips add 86 pixels
+of terrain height. Overflowing controls have fixed left/right arrow buttons;
+wheel and drag scrolling remain available. Widening the window returns the
+strip to its first button. Close stays fixed to the upper-right frame corner.
+Full caption and scroll hints support all four interface languages.
+Tree Hunter adds all ten native bush species to Species, alongside the fifteen
+trees. Age/pruning/harvest/sprout filters apply to bushes, including mycelium and
+enchanted variants. Tree IDs and saved selections remain compatible.
+
 ## Remastered 0.7.4
 
 Containers adds Show on map before Add to monitor. Matching loaded containers
