@@ -1,7 +1,67 @@
-# Wurm HUD Remastered 0.7.0
+# Wurm HUD Remastered 0.7.4
 
 Nine selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.7.4
+
+- Added Show on map before Add to monitor on Containers. Matching loaded
+  containers appear as blue stars on the full map and mini-map. This layer
+  uses the same received catalogue and update interval as Mobs, with independent
+  toggles and filters, live positions and no tracking requests or saved marks.
+- Route Statistics adds three NAV LINE style buttons and a green NAV toggle.
+  Separate off-road, road and highway rows start at 8/16/24 km/h and learn actual
+  movement speeds for the current vehicle or walking. Measured speeds drive ETA;
+  stops, teleports and terrain/transport transitions do not contaminate samples.
+- Added Silverlake sermons at Revival event, credited to Opene/Sklotopolis,
+  after removing the source screenshot's interface. The startup library now has
+  17 screens. Death keeps its existing ID and Red Leaf/Sklotopolis credit, with
+  new layered artwork showing a deep abyss and the feeling of falling.
+
+## Changes in 0.7.3
+
+- Fixed full-map resizing being undone by the native fixed-size reset on every
+  rendered frame. The lower-left grip keeps independent width/height changes
+  and stable top/right anchors; other servers retain their native map behavior.
+
+## Changes in 0.7.2
+
+- Integrated 579 newly completed world-object icon families from the development
+  library: 2,020 ready families total, at 64/32/16 pixels with reviewed masks.
+- Fixed the crash when dragging items into Postbox. Single items, multiple
+  selections and filled containers use the physical mailbox inventory.
+- Restored world hover text, including food storage bin names and creature
+  descriptions, by fixing an access error in the container-weight hook.
+- Fixed shared-loader access to terrain artwork that stopped the cave map and
+  repeatedly interrupted the HUD. Dropdown hovers no longer recurse, and
+  Keybinder waits for a connection before requesting the creation catalog.
+- Manual Examine replies reach Events, including drink quality supplied by the
+  server, even when several items are selected or a background probe was pending.
+- Once a second, both maps receive the entire surface tile buffer already sent
+  by the server. Other players' terrain edits and tile-state changes update too;
+  exact receipt coordinates prevent wrapped buffer slots appearing elsewhere.
+- Surface mini-map zoom-out now covers up to 480 tiles per side, three times
+  the previous limit, for enlarged windows.
+- Mini-map contour interval, north/heading orientation, size and zoom persist
+  in local settings across window recreation, reconnects and client restarts.
+- The full map uses one lower-left resize button with independent width/height
+  and a 480x360 minimum. The former four-corner resize mechanism is removed.
+- Skill tracker gain headings follow Recent/Session mode immediately, with
+  localized full-caption hints in narrow columns.
+- Native model-name decoding uses a private copy, preventing concurrent readers
+  from corrupting resource paths.
+- Map texture updates preserve the renderer's texture bindings. This fixes a
+  state leak that could interfere with the HUD; cave-map output and underground
+  stability still need verification in the game.
+- Includes the previously integrated crafting, Skills, maps, Quick Turn,
+  loading-screen and reviewed icon updates described below.
+
+## Changes in 0.7.1
+
+- Integrated all 1,441 ready icon families, including young lemon, orange, willow
+  and the repaired walnut wood mask. All three raster sizes and approved material
+  masks are embedded in the single JAR. Unfinished masks remain excluded, and
+  ambiguous native metadata retains the existing icon.
 
 ## Changes in 0.7.0
 
@@ -9,7 +69,7 @@ local settings page and one product version.
   cart/wagon, hitch, rider and particle steering behavior and session vqt commands.
   Disable the standalone wurm-vehicles-quick-turn descriptor before installation.
 - Both maps use compact terrain artwork. The main map has an outside frame,
-  four resize corners, default size on reopening, and a single toolbar row with
+  one lower-left resize button, default size on reopening, and a single toolbar row with
   horizontal mouse scrolling. The mini-map adds a resize grip and north/heading
   compass switch; terrain, marks, routes and deed borders rotate while text stays
   horizontal. Center, player arrow and navigation origin use continuous positions.
@@ -108,7 +168,7 @@ local settings page and one product version.
 This release also includes compact server forms and automatic scrollbar hiding,
 blank skill-card fixes, the Metal altar caption, the compact bulk transfer form,
 SkloGraphics expanded cave-buffer support, and the Timers menu mapping to Alarm
-Clock. Keybinder, crafting, Waypointer, native camera behavior and the sixteen
+Clock. Keybinder, crafting, Waypointer, native camera behavior and the seventeen
 startup screens retain the integrated updates described in the sections below.
 
 [Download the latest ZIP](https://github.com/chamomilo/wurm-hud-remastered/releases/latest)
@@ -126,7 +186,7 @@ required. Close the entire game client and WurmLauncher before installation.
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.7.0.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.7.4.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -135,7 +195,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.0.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.4.jar
 
 One JAR contains all nine components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
@@ -426,9 +486,11 @@ highlights and magic shimmer across supported item views.
   in the sole Remastered JAR. The module switch controls resource activation;
   saved icon, material and effect settings remain compatible.
 
-The newer model-based library of 132 reviewed 64/32/16 px artwork families is
-development work. It has not replaced the installed runtime pack. Its catalogue,
-masters, source cache and unconfirmed bindings are excluded from this ZIP.
+The runtime catalogue includes 1,441 reviewed artwork families (882 item and
+559 world-object families), each at 64/32/16 px with approved material masks.
+Exact native metadata selects the artwork; ambiguous or unavailable matches
+retain the existing icon. New artwork continues in the separate development
+library. Masters, source references and unfinished masks are excluded from ZIPs.
 
 ### Material Colors
 
@@ -458,12 +520,14 @@ Compared with the standalone baseline: [Startup Screen v0.5.2](https://github.co
 Illustrated 1920 x 1080 JPEG loading screens retain the native loading text,
 progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain supported.
 
-- The sixteen-screen collection includes credited Sklotopolis scenes:
+- The seventeen-screen collection includes credited Sklotopolis scenes:
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
   whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
   showing a copper-still cellar. Troll King Slayer (Cudlekinz) adds an arena
   battle with a gold title and the credit Cudlekinz | Sklotopolis.
-  Death (Red Leaf | Sklotopolis) adds a reworked crimson-black death vortex.
+  Silverlake sermons at Revival event (Opene/Sklotopolis) preserves the Revival
+  congregation after removing the source screenshot's interface. Death
+  (Red Leaf | Sklotopolis) uses a deep abyss, layered clouds and falling fragments.
   Titles and source credits are on the images and preserved with the
   embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five
@@ -480,7 +544,7 @@ Compact PNG artwork keeps source alpha and window opacity. The pin is
 256 x 234, the clock and compass layers are 256 x 256, and shared
 material tiles repeat at 128 x 128. Native frames, buttons and icon
 atlas geometry are preserved. Other PNGs use lossless compression;
-the sixteen Full HD loading screens retain baseline JPEG encoding.
+the seventeen Full HD loading screens retain baseline JPEG encoding.
 
 ### Quick Turn
 

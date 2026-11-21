@@ -5,12 +5,15 @@ Compared with the standalone baseline: [Startup Screen v0.5.2](https://github.co
 Illustrated 1920 x 1080 JPEG loading screens retain the native loading text,
 progress display and reconnect controls. Legacy 3840 x 2160 custom packs remain supported.
 
-- The sixteen-screen collection includes credited Sklotopolis scenes:
+- The seventeen-screen collection includes credited Sklotopolis scenes:
   A Day of Climbing (FlpSilva), Avallone Docks (Encode), and A Fine Work (Mlemow),
   whose pinto horse looks into the dug pit, plus Need a brew ? (Wolfbane),
   showing a copper-still cellar. Troll King Slayer (Cudlekinz) adds an arena
   battle with a gold title and the credit Cudlekinz | Sklotopolis.
-  Death (Red Leaf) adds a crimson-black death vortex with the interface removed.
+  Silverlake sermons at Revival event (Opene/Sklotopolis) preserves the gathered
+  congregation after removing the screenshot interface. Death (Red Leaf) uses
+  a deep crimson-black abyss, layered clouds and falling fragments. Its existing
+  screen ID and source credit remain unchanged.
   Titles and source credits are on the images and preserved with the
   embedded collection.
 - Choose a fixed named screen or Random. Random changes images every five

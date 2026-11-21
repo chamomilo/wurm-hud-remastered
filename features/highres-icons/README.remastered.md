@@ -22,8 +22,10 @@ highlights and magic shimmer across supported item views.
   in the sole Remastered JAR. The module switch controls resource activation;
   saved icon, material and effect settings remain compatible.
 
-The newer model-based library of 132 reviewed 64/32/16 px artwork families is
-development work. It has not replaced the installed runtime pack. Its catalogue,
-masters, source cache and unconfirmed bindings are excluded from this ZIP.
+The runtime catalogue includes 2,020 reviewed artwork families (882 item and
+1,138 world-object families), each at 64/32/16 px with approved material masks.
+Exact native metadata selects the artwork; ambiguous or unavailable matches
+retain the existing icon. New artwork continues in the separate development
+library. Masters, source references and unfinished masks are excluded from ZIPs.
 
 Install and configure this component using the [Remastered guide](../../README.md).

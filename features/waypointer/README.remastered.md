@@ -1,9 +1,26 @@
 # Waypointer in Wurm HUD Remastered
 
+## Remastered 0.7.4
+
+Containers adds Show on map before Add to monitor. Matching loaded containers
+appear as blue stars on both maps with exact-name hover. Containers and Mobs
+keep independent filters and toggles, sharing the received catalogue and update
+cadence without additional tracking requests or a separate loading radius.
+
+Route Statistics has three NAV LINE style buttons and a green NAV toggle for
+pausing/resuming the same target. Vertical off-road, road and highway rows begin
+at 8/16/24 km/h. Session-local measurements learn actual movement speeds for
+walking and each vehicle, and measured categories update ETA. Stops, teleports
+and surface/transport transitions do not contaminate the samples.
+
+The retained 0.7.3 resize fix prevents native WorldMap.update from resetting
+the full map's dimensions on every rendered frame. Independent axes and fixed
+top/right anchors survive dragging and subsequent frames.
+
 ## Remastered 0.7.0
 
-Both maps use compact terrain artwork. Main-map frame and four resize handles
-surround the content; the toolbar scrolls horizontally and reopening resets size.
+Both maps use compact terrain artwork. The main-map frame has one lower-left
+resize button with independent axes; the toolbar scrolls horizontally and reopening resets size.
 The mini-map has a resize grip and north/heading compass switch. Geometry rotates,
 labels stay horizontal, and continuous player positions keep following smooth.
 Mobs Show on map displays the filtered loaded actors with type-based green/red

@@ -1,9 +1,100 @@
-Wurm HUD Remastered 0.7.0
+Wurm HUD Remastered 0.7.4
 
 Nine selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
+
+ADDED IN 0.7.4
+
+Containers now has Show on map immediately before Add to monitor. Toggle it to
+show the loaded containers matching the current filters as blue stars on both
+the full map and mini-map. Mobs and Containers can be enabled independently.
+Both use the same received catalogue and 250ms filter refresh, without extra
+tracking requests, saved waypoint creation or a separate loading radius.
+Moving containers retain live coordinates; cave/surface markers stay separated.
+Changing the list filters updates its enabled layer. The layer resets on session
+teardown, like Mobs.
+
+Route Statistics has three NAV LINE style buttons and a green NAV toggle.
+Disable NAV here to pause navigation; enable it again to resume the same target.
+Off-road, road and highway speeds start at 8/16/24 km/h. Movement samples learn
+actual speeds independently for walking and each vehicle during the session.
+Measured speeds update ETA. Stops, teleports and surface/transport transitions
+are excluded; an unmeasured surface keeps its default estimate.
+
+The startup collection now contains 17 screens. Silverlake sermons at Revival
+event is credited to Opene/Sklotopolis and uses the supplied scene with its
+interface removed. The short settings caption keeps the complete title and
+credit in the hint. Death retains its ID and Red Leaf/Sklotopolis credit with
+new deep, layered abyss artwork conveying a fall into oblivion.
+
+The avatar portrait investigation is deferred as requested; no portrait changes
+are included.
+
+FIXED IN 0.7.3
+
+Full-map resizing now survives rendered frames. Native WorldMap.update no longer
+resets this custom map to 926x645 after every pointer movement. Use the lower-left
+grip to change width and height independently; the top and right edges stay fixed.
+Other servers retain their native fixed-size map behavior.
+
+FIXED IN 0.7.2
+
+Includes 579 newly completed world-object icon families from the development
+library. The installed catalog now contains 2,020 ready families: 882 item and
+1,138 world-object families, with 64/32/16-pixel artwork and reviewed masks.
+Unfinished artwork remains excluded.
+
+Drag single items, several selected items or filled containers into Postbox
+without the inventory-handler crash. Incoming mail lists and quote forms no
+longer act as physical inventory drop targets.
+
+World hover text is restored, including food storage bin names and creature
+descriptions. Container weights continue to use the available server data.
+
+Cave-map artwork now loads correctly through the shared game loader, preventing
+the repeated HUD rendering error. Hovering dropdowns no longer overflows the
+stack. Keybinder waits for the connection before requesting the recipe catalog.
+
+Manual Examine replies remain visible in Events, including drink quality sent
+by the server. This also applies with several selected items and pending
+background metadata requests.
+
+Both maps refresh from the entire received surface tile buffer once a second,
+including terrain edits made by other players and changes in tile state. This
+uses existing server data without additional requests. Exact packet coordinates
+prevent wrapped buffer slots from appearing at unrelated map locations.
+Surface mini-map zoom-out now covers up to 480 tiles per side instead of 160,
+so enlarged mini-map windows can show a wider area.
+Its contour interval, north/heading orientation, size and zoom are saved locally
+in .chamomilo/mod-settings/wurm-waypointer-ui.properties under your user home.
+They survive window recreation, reconnects and restarts; saved dimensions fit
+the current HUD. Surface and cave zoom ranges remain independent.
+
+The full map has one lower-left resize button, matching the mini-map treatment.
+Drag horizontally or vertically to resize those axes independently, down to a
+480x360 minimum. The old four-corner resize mechanism has been removed.
+
+The skill tracker's gain heading follows Recent/Session mode immediately.
+
+Model-name decoding no longer modifies shared storage, preventing concurrent
+readers from corrupting native resource paths.
+
+Map texture updates preserve the renderer's texture bindings. The corrected
+state leak could disrupt the HUD; check the cave map and underground stability
+in your game session after updating.
+
+This ZIP includes all previously integrated crafting, Skills, maps, Quick Turn,
+loading-screen and reviewed icon updates below.
+
+NEW IN 0.7.1
+
+All 1,441 ready icon families are integrated: 882 item and 559 world-object
+families, each at 64/32/16 pixels with approved material masks. This includes
+young lemon, orange and willow, and the repaired walnut wood mask. Exact native
+metadata selects artwork; ambiguous matches retain the existing icon. Unfinished
+masks and source masters remain in the separate development library.
 
 NEW IN 0.7.0
 
@@ -13,7 +104,7 @@ standalone numeric tuning and vqt console commands; console On/Off is temporary.
 Disable the standalone wurm-vehicles-quick-turn.properties before installation.
 
 Both maps use compact terrain artwork. The main map has an outside frame,
-four resize handles and a single-row toolbar that scrolls horizontally with
+one lower-left resize button and a single-row toolbar that scrolls horizontally with
 the mouse wheel or dragging. It reopens at its default size. The mini-map has
 a lower-left resize grip and lower-right compass switch for north up / heading
 up. Terrain, markers, routes and deed borders rotate together; labels stay
@@ -141,7 +232,7 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.7.0.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.7.4.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -151,7 +242,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.0.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.7.4.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,
@@ -184,7 +275,7 @@ THE INCLUDED COMPONENTS
 - High-res Icons: the reviewed integrated item-icon pack.
 - Material Colors: the supported material palettes and masks; SkloGraphics
   retains unrelated lighting, shaders and world effects.
-- Startup Screen: the sixteen-screen loading collection and credited artwork.
+- Startup Screen: the seventeen-screen loading collection and credited artwork.
 - Quick Turn: responsive cart/wagon visual steering, hitch/rider/particle follow.
 
 Settings are on the local shared page; user data retains its legacy paths.
@@ -198,6 +289,44 @@ chrome supports reading size changes and opacity without changing game data.
 
 CHECK IN GAME AFTER INSTALLING
 
+For 0.7.4 and the retained map-resize fix:
+
+1. Resize the full map with its lower-left grip in both axes. Dimensions survive
+   movement and rendered frames; top/right anchors stay fixed. Reopen the map.
+2. On Containers, filter the list and enable Show on map. Blue stars appear on
+   both maps for matching loaded containers, with names on hover. Disable this
+   layer while Mobs stays enabled; its animal markers remain visible.
+3. Open Route Statistics during navigation. Click all three NAV LINE styles:
+   the selected style and route rendering change together. NAV starts green;
+   turn it off and on to pause and resume the same target from this window.
+4. Travel steadily for several seconds on off-road, road and published highway
+   surfaces. The corresponding default 8/16/24 km/h row becomes measured and ETA
+   updates. Stopping must not overwrite the travelling speed with zero.
+5. Change vehicle or dismount: a new transport starts with its own defaults.
+   Return to the previous transport to restore its session measurements.
+   Reconnect to verify session cleanup and ordinary map/navigation behavior.
+6. Choose Silverlake sermons, restart and inspect its picture/title/credit.
+   Repeat with Death: the abyss has visible depth and the original credit.
+   Check Random rotation, narrow settings and all four interface languages.
+
+Earlier integrated fixes:
+
+1. Drag one item, several selected items and a filled container into Postbox's
+   Send and Mailbox inventory views. The client stays open and the selected
+   items move into the physical mailbox with their nested contents retained.
+2. Drop over Incoming and a draft/quote form: no transfer occurs. Preparing or
+   cancelling a quote never sends mail; only the separate final Send does.
+3. Hover a renamed food storage bin, a ground item and a creature. Their names
+   and original server descriptions remain visible; known weights still appear.
+   Hover dropdowns in server forms: the selected value appears without freezing.
+   Examine a drink manually: the server's description and QL reach Events.
+4. Enter a cave, enable Cave view, walk and mine. Check received terrain and
+   updates with contours on/off. HUD text, icons and windows should stay stable.
+5. Leave and re-enter the cave, then reconnect. Repeat the hover and Postbox
+   checks and confirm normal inventory transfers and toolbelt actions.
+
+Earlier integrated changes:
+
 1. Disable the standalone Quick Turn descriptor manually. Toggle the integrated
    Quick Turn block and restart: enabled carts/wagons turn promptly with their
    hitch/rider; disabled mode uses native steering. Check boats and ridden horses.
@@ -210,7 +339,7 @@ CHECK IN GAME AFTER INSTALLING
 4. Hover filled containers in inventory and world/Select: weights appear when
    metadata is known, without counting nested contents twice. Ordinary Open and
    inventory transfers still work.
-5. Check terrain artwork on both maps, resize handles, scrolling main toolbar,
+5. Check terrain artwork on both maps, lower-left resize buttons, scrolling main toolbar,
    default main-map size on reopen and the mini-map compass toggle. Turn/move:
    points, routes and deed borders rotate together; labels remain horizontal.
 6. Test Show on map with filtered peaceful/aggressive mobs and exact-name hovers;
@@ -231,7 +360,8 @@ The embedded high-res UI SDK is pinned to 0.4.15 and included once.
 Startup artwork credits remain on the images. The collection includes
 A Day of Climbing (FlpSilva), Avallone Docks (Encode), A Fine Work (Mlemow),
 Need a brew ? (Wolfbane), Troll King Slayer (Cudlekinz | Sklotopolis), and
-Death (Red Leaf | Sklotopolis).
+Death (Red Leaf | Sklotopolis), and Silverlake sermons at Revival event
+(Opene/Sklotopolis).
 Compact terrain artwork comes from the user-supplied Thources Minimap 1.0.0
 reference archive. Its executable mod classes are not included.
 See the published component guides and embedded notices for original projects.
