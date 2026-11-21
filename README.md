@@ -7,11 +7,10 @@ local settings page and one product version.
 
 - Go to sleep uses two direct YES/NO actions instead of radio choices and Send;
   each retains the original native question and answer handling.
-- Keybinder's Plant, Plant in center and Sow select planting material inside the
-  configured container using the server's actual available actions. Seeds,
-  flowers, sprouts, seedlings and server-specific materials need no name/icon
-  whitelist. Private asynchronous queries preserve native/SkloGraphics popup
-  requests. The container stays active and other containers are not searched.
+- Keybinder's Plant and Plant in center resolve a native sprout inside the
+  selected container, including SkloGraphics ToolMenu compatibility. The
+  container stays active for later presses. Generic seeds/flowers support is
+  a separate unfinished change and is not included in this release.
 
 ## Changes in 0.8.0
 
