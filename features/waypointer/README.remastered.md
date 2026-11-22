@@ -1,5 +1,16 @@
 # Waypointer in Wurm HUD Remastered
 
+## Remastered 0.9.4
+
+Surface navigation lines stay visible through trees and shrubs, with terrain
+and structures still hiding the sections behind them.
+Hovering a dropdown shows the full selected choice without a stack overflow.
+
+## Remastered 0.9.3
+
+The automatic meteorite waypoint is removed when the server removes the fully
+mined meteorite.
+
 ## Remastered 0.7.5
 
 Full-map title/status text is drawn directly on the wooden rails in the shared

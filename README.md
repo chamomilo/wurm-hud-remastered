@@ -1,7 +1,74 @@
-# Wurm HUD Remastered 0.8.2
+# Wurm HUD Remastered 0.9.4
 
 Ten selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.9.4
+
+- Inventory and container windows quietly check visible gems and eligible
+  items, including tools, for magic. Confirmed rows keep their rarity-colour
+  glow and localized hint during the session. Casts, dispels and item updates
+  trigger a recheck, and manual Examine still appears in Events.
+- Waypointer's surface navigation line stays visible through trees and shrubs
+  while terrain and structures still occlude it.
+- Hovering Waypointer dropdowns shows the full current choice without a stack overflow.
+- Narrow saved chat windows reopen with room for both channel tabs and controls.
+
+## Changes in 0.9.3
+
+- **As much as I can carry, any QL** in Bulk Transfer takes matching items
+  from the same storage in descending quality order until the destination
+  reaches its limit. The original single-row maximum remains the default.
+- The chat rename and private-chat prompts visibly focus the text field as
+  soon as they open.
+- Inventory names glow in their rarity colour when an enchantment is
+  confirmed. Visible gems are checked automatically, and Examine can reveal
+  the glow on tools and other items.
+- Fighting HUD shows the confirmed stance in auto combat and updates hit
+  chances after stance changes. It also shows expected weapon damage before
+  armour and compares estimated combat ratings.
+- Waypointer removes the automatic meteorite waypoint when the server
+  removes the fully mined meteorite.
+
+## Changes in 0.9.2
+
+- Fighting HUD shows the attack figure and a preliminary BEST zone when a
+  target is selected. During manual combat BEST ranks server-available zones.
+- The damage index uses observations for the equipped loadout, including the
+  sickle, and shows a dash until there are hit samples for that loadout.
+- Fighting HUD reads the shield from its equipment slot, including renamed
+  shields, and shows its equipped status before it has block observations.
+
+## Changes in 0.9.1
+
+- In Waypointer's Creatures Highlight tab, **&** links the exact animal and age
+  filters. The switches move together, each list counts matches within the
+  other selection, and creatures matching both use the animal outline color.
+- Chat channels publish to the HUD by default. Their HUD switches and colors are
+  saved locally. The chat window folds on window activation or movement, and the
+  pin beside **Clear messages** keeps it open.
+- **Rename** and **Default name** in the channel menu manage local display names.
+  The private-chat and rename prompts use high-res UI frames and focused text
+  fields directly below their labels.
+
+## Changes in 0.9.0
+
+- Chat channels can copy new messages into a transparent HUD area. Right-click
+  a channel to enable **Show on HUD** or choose a color. Messages start with the
+  channel in brackets, followed by the chat time, sender and message. Personal
+  conversations use `[private]`. The chat window's text size also applies to
+  the feed. Scroll with the mouse wheel and use **Clear messages** in the chat
+  window to clear the HUD history.
+- Select **+** after the last chat tab, enter a character's name and press Enter
+  to open their private conversation.
+- Waypointer's Tiles Highlight tab places Tree Hunter in the right column and
+  Meteors immediately below Harvestable areas on the left.
+
+## Changes in 0.8.3
+
+- Launcher synchronization waits for a loaded session before sending `/alts`
+  in Local with the native channel/message order. Manual `/alts` stays visible
+  and cancels automatic reply suppression.
 
 ## Changes in 0.8.2
 
@@ -239,7 +306,7 @@ required. Close the entire game client and WurmLauncher before installation.
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.8.2.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.9.4.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -248,7 +315,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.2.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.4.jar
 
 One JAR contains all ten components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
@@ -622,7 +689,7 @@ available in Keybinder with localized captions. Disable the standalone descripto
 
 The release build checks component regressions, native UI/input/layout probes,
 four-language layouts, geometry, resource bytes and activation isolation. It
-also runs twenty-one fresh packaged shared-loader scenarios and the complete
+also runs twenty-three fresh packaged shared-loader scenarios and the complete
 actual ModLoader lifecycle with all components enabled and all disabled.
 The SDK is pinned to high-res UI 0.4.15 and embedded exactly once, retaining
 font and component notices. The ZIP whitelist is checked against all three files.

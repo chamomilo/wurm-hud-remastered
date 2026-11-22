@@ -1,20 +1,25 @@
 # High-res HUD in Wurm HUD Remastered
 
-## Remastered 0.8.1
+Double-click a recognized world container to run the native Open action. World
+and Select tooltips no longer ask for weight. Inventory and container-window
+rows still show the weight supplied by the server.
 
-Skill research covers 141 indexed skills, characteristics and religious values,
-with four-language Overviews, expanded formulas, conditions, native references,
-recipes, combat moves and spells. Current observed character/target/item data
-takes priority; unknown live inputs remain unknown. Reference calculations are
-separate and labelled. Faith, Favor and Alignment keep their own rules. Native
-formula coverage does not imply a final numeric calculator for every server-only
-branch; missing armour, resistance, cooldown or deity data stays explicit.
+## Remastered 0.9.4
 
-Go to sleep has direct YES/NO actions using the original native answer. Pinned
-containers accept native inventory drops, including selected stacks and Shift
-quantity prompts. Name sorting ignores metadata-backed rarity prefixes while
-preserving full names and colours. Stone-wall continuation keeps the trowel as a
-reusable tool and supports the native action queue.
+Visible gems and eligible inventory or container items, including tools, are
+checked quietly for magic. Confirmed items have a rarity-colour name glow and
+a localized hint. Results last for the login session and are refreshed after
+casts, dispels and item updates. Manual Examine stays visible in Events.
+Narrow saved chat windows reopen with room for both channel tabs and controls.
+
+## Remastered 0.9.3
+
+Bulk Transfer can take matching items of any quality from the same storage,
+highest quality first. The chat rename and private-chat prompts focus the
+visible text field on opening. Confirmed enchantments make inventory names glow
+in their rarity colour. Fighting HUD tracks confirmed auto-combat stance,
+refreshes hit chances and displays expected pre-armour damage and estimated
+combat ratings.
 
 ## Remastered 0.7.0
 
@@ -40,7 +45,7 @@ Healthbar, Select bar and Fighting HUD retain their native gameplay actions.
   COD and an authoritative server quote followed by an explicit Send action.
   Native forms remain the transport; no server mod or invented item IDs are used.
 
-- K opens the skill browser with cards covering 141 indexed skills, religious values and
+- K opens the skill browser with cards for all 138 skills, groups and
   characteristics. Click a skill or use Build skill help to open its card.
   Overview, Status, Actions, Skillgain, Titles, Relations and Wiki share the same
   structure. Cards include themed artwork, current-state calculations, skill

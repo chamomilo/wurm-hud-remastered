@@ -1,9 +1,84 @@
-Wurm HUD Remastered 0.8.2
+Wurm HUD Remastered 0.9.4
 
 Ten selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
+
+CHANGED IN 0.9.4
+
+Inventory and container windows quietly check visible gems and eligible items,
+including tools, for magic. Confirmed rows keep their rarity-colour glow and
+localized hint during the session. Casts, dispels and item updates trigger a
+recheck, and manual Examine still appears in Events.
+
+Waypointer's surface navigation line stays visible through trees and shrubs
+while terrain and structures still occlude it.
+Hovering Waypointer dropdowns shows the full current choice without a stack overflow.
+
+Narrow saved chat windows reopen with room for both channel tabs and controls.
+
+CHANGED IN 0.9.3
+
+Bulk Transfer offers "As much as I can carry, any QL" for matching items in
+the same storage. It takes the highest quality first and continues while the
+destination has room. The original single-row maximum starts selected.
+
+The chat rename and private-chat prompts focus the visible text field as
+soon as they open. Inventory names glow in their rarity colour when an
+enchantment is confirmed. Visible gems are checked automatically, and
+Examine can reveal the glow on tools and other items.
+
+Fighting HUD shows the confirmed stance in auto combat, updates hit chances
+when it changes and shows expected weapon damage before armour and estimated
+combat ratings. Waypointer removes the automatic meteorite waypoint when
+the server removes the fully mined meteorite.
+
+CHANGED IN 0.9.2
+
+Fighting HUD shows the attack figure and a preliminary BEST zone when a
+target is selected. During manual combat BEST uses the server's available
+zones. The damage index uses observations for the equipped loadout, including
+the sickle, and shows a dash until there are hit samples for that loadout.
+The shield status follows the shield slot, including renamed shields. It
+shows whether the shield is equipped before block samples are available.
+
+CHANGED IN 0.9.1
+
+In Waypointer's Creatures Highlight tab, use & to join the exact animal and
+age filters. Either switch controls the pair. Each list shows how many loaded
+creatures match its options and the selection in the other list. The joint
+outline uses the animal color and requires both selections.
+
+Chat channels publish to the HUD by default, including the first message in a
+new channel. The HUD preference and color for each channel are saved locally.
+The chat window starts collapsed. It folds when another window is activated or
+when movement starts. Use the pin beside Clear messages to keep it open.
+Rename and Default name in a channel's right-click menu set or clear its
+local display name, which is saved alongside the channel's HUD preferences.
+The private-chat and rename prompts use high-res UI frames and focused text
+fields directly below their labels.
+
+CHANGED IN 0.9.0
+
+Right-click a chat channel and select Show on HUD to copy new messages into the
+transparent area above the chat. Each line starts with its channel in brackets,
+then shows the chat time, sender and message. All private conversations use
+[private]. The chat window's text size controls apply to the HUD feed too.
+Messages color offers ten presets. Use the mouse wheel over the messages to
+review recent lines. The usual mouse clicks still reach the world or its windows.
+Clear messages in the chat window clears the HUD feed only.
+Select + at the end of the chat tabs, enter a character's name and press Enter
+to open their private chat. The + tab always follows the last conversation.
+In Waypointer's Tiles Highlight tab, Tree Hunter has its own right column and
+Meteors is directly beneath Harvestable areas on the left.
+
+CHANGED IN 0.8.3
+
+Launcher synchronization now sends /alts as the message in Local, using the native
+channel/message argument order. The request waits for a successfully loaded
+session. Manual /alts remains visible and cancels automatic reply suppression.
+The compatibility log records the actual request channel and recognized replies.
 
 CHANGED IN 0.8.2
 
@@ -334,7 +409,7 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.8.2.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.9.4.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -344,7 +419,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.8.2.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.4.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,
