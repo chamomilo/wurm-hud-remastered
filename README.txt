@@ -1,9 +1,18 @@
-Wurm HUD Remastered 0.9.4
+Wurm HUD Remastered 0.9.5
 
 Ten selectable Wurm Unlimited client components in one installation.
 No server mod is required. The interface supports English, Brazilian
 Portuguese, German and Russian. Player names, item names, enchantments and
 verbatim server messages retain the wording supplied by the game/server.
+
+CHANGED IN 0.9.5
+
+Fighting HUD colours stance arrows by the chance reported by the server and
+shows the exact percentage on hover. Distance shows the weapon range state,
+and Footing uses a diagonal arrow with a height advantage tooltip.
+
+Waypointer widens the Mobs name column by 20%. The taller waypoint editor
+can delete the saved point, stop its navigation and close in one click.
 
 CHANGED IN 0.9.4
 
@@ -409,7 +418,7 @@ Download: https://github.com/chamomilo/wurm-hud-remastered/releases/latest
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and saved data. Avatar2 stays a separate mod.
-3. Extract wurm-hud-remastered-0.9.4.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.9.5.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor. It selects the new versioned JAR.
 4. Start through Client Mod Launcher. Open Main menu > Wurm HUD Remastered.
    Module switches apply after a COMPLETE client restart. Check your existing
@@ -419,7 +428,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.4.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.5.jar
 
 One JAR contains all code, enabled modules' resource packs and the pinned
 high-res UI SDK. No research, scripts, logs, screenshots, loose assets,

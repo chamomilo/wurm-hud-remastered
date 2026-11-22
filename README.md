@@ -1,7 +1,12 @@
-# Wurm HUD Remastered 0.9.4
+# Wurm HUD Remastered 0.9.5
 
 Ten selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.9.5
+
+- Fighting HUD colours the stance arrows by the server-reported chance of changing stance and shows the exact percentage on hover. Distance shows weapon range in words, and Footing shows a diagonal arrow with the height advantage in its tooltip.
+- Waypointer widens the Mobs name column by 20%. The waypoint editor fits its full action row and can delete the saved waypoint, stop its navigation and close the window in one click.
 
 ## Changes in 0.9.4
 
@@ -306,7 +311,7 @@ required. Close the entire game client and WurmLauncher before installation.
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.9.4.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.9.5.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -315,7 +320,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.4.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.5.jar
 
 One JAR contains all ten components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
