@@ -1,7 +1,73 @@
-# Wurm HUD Remastered 0.9.5
+# Wurm HUD Remastered 0.10.4
 
 Ten selectable Wurm Unlimited client components in one installation, with one
 local settings page and one product version.
+
+## Changes in 0.10.4
+
+- High-res Icons adds 1,000 reviewed world-object families. The installed
+  catalogue now contains 882 item and 2,138 world-object families, each at
+  64/32/16 pixels with the applicable material masks.
+- Fighting HUD uses new pictograms for offered and active special moves,
+  with a separate automatic-readiness icon and sickle-specific artwork.
+- Fighting HUD clears stale stance chances after a rejected move or a change
+  in mount. Its combat tooltips explain the current estimates and show the
+  primary and off-hand weapons when both are equipped.
+- Quick Turn follows the fitted chassis with a raised, forward driver's eye
+  on supported wagons and transporters. Third-person orbit shares that origin.
+- Waypointer reuses unchanged marker lists and refreshes affected terrain
+  chunks. Once a second it also checks a 7 × 7 area around each loaded player
+  and the tile beneath each loaded creature, including neighboring tiles that
+  affect rendering.
+- Performance recorder adds per-frame timings and garbage-collection records
+  in `frame-timings.csv` and `gc-pauses.csv`.
+
+## Changes in 0.10.3
+
+- Fighting HUD marks locked stances and excludes them from recommendations.
+- Combat Focus shows the current melee or bow bonuses on the HUD, with
+  per-level gains and totals in the tooltips.
+- Special-move tooltips show the move's effects, wind-up, estimated success
+  chance for weapon moves, and stamina costs as units and percentages.
+  Ready manual moves can be activated from the HUD.
+
+## Changes in 0.10.2
+
+- Manual combat is selected on each character's first login with the update.
+  Use Autofight on the Quick Bar to change the mode. Wurm remembers the choice.
+- Fighting HUD colours stance arrows and shows estimated chances in automatic
+  combat when the target and weapon are known. The automatic special-move
+  slot shows readiness and the move in progress.
+- Expected Damage shows damage after armour as a share of target health.
+  Focus level 4 adds 10% outgoing melee damage and 8 combat rating.
+- Distance and footing update combat rating and chance to hit as you move.
+  The distance tooltip shows the combat rating penalty.
+
+## Changes in 0.10.1
+
+- Fighting HUD shows stance-change chances in manual combat, marks
+  unavailable stances in grey, and highlights an active automatic special
+  move. Tooltips show combat-style effects, weapon range, footing, and
+  special-move timings.
+- Combat Focus becomes available during automatic combat. Its button
+  explains all five levels, and the indicator shows the current bonuses.
+- Target health shows the current and maximum values. Expected Damage
+  works with the huge shod club and shows damage as a share of maximum
+  target health.
+
+## Changes in 0.10.0
+
+- Fighting HUD records stance-arrow packets, combat context, and raw target
+  health during creature fights. After each fight it saves compact local
+  snapshots and updates Knowledge by world, type, age, and condition.
+- Fighting HUD estimates damage after armour from comparable combat
+  observations. The analysis tooltip shows the estimate before armour.
+- Chat remembers closed channel tabs. Restore them under Chat channels in
+  Remastered settings.
+- The Performance recorder window on Windows saves process CPU and memory
+  samples to the local Remastered diagnostics folder.
+- Quick Turn aligns wagons, large carts, and creature and ship transporters
+  with surface slopes and adjusts supported drawbars to the hitched team.
 
 ## Changes in 0.9.5
 
@@ -311,7 +377,7 @@ required. Close the entire game client and WurmLauncher before installation.
    wurm-vehicles-quick-turn.
    Keep predecessor standalone healthbar/selectbar/fighting HUD disabled too.
    Preserve their folders and user data; renamed descriptor settings are read.
-3. Extract wurm-hud-remastered-0.9.5.zip into WurmLauncher, merging mods and
+3. Extract wurm-hud-remastered-0.10.2.zip into WurmLauncher, merging mods and
    replacing the Remastered descriptor if present.
 4. Start through Client Mod Launcher. For a previous Remastered installation,
    the replaced descriptor selects the new versioned JAR.
@@ -320,7 +386,7 @@ The ZIP contains exactly three files:
 
     README.txt
     mods/wurm-hud-remastered.properties
-    mods/wurm-hud-remastered/wurm-hud-remastered-0.9.5.jar
+    mods/wurm-hud-remastered/wurm-hud-remastered-0.10.2.jar
 
 One JAR contains all ten components' code and their bundled resources.
 Resource activation follows each component's switch. Existing user files keep
@@ -616,8 +682,8 @@ highlights and magic shimmer across supported item views.
   in the sole Remastered JAR. The module switch controls resource activation;
   saved icon, material and effect settings remain compatible.
 
-The runtime catalogue includes 1,441 reviewed artwork families (882 item and
-559 world-object families), each at 64/32/16 px with approved material masks.
+The runtime catalogue includes 3,020 reviewed artwork families (882 item and
+2,138 world-object families), each at 64/32/16 px with approved material masks.
 Exact native metadata selects the artwork; ambiguous or unavailable matches
 retain the existing icon. New artwork continues in the separate development
 library. Masters, source references and unfinished masks are excluded from ZIPs.

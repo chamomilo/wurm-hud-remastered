@@ -22,8 +22,8 @@ highlights and magic shimmer across supported item views.
   in the sole Remastered JAR. The module switch controls resource activation;
   saved icon, material and effect settings remain compatible.
 
-The runtime catalogue includes 2,020 reviewed artwork families (882 item and
-1,138 world-object families), each at 64/32/16 px with approved material masks.
+The runtime catalogue includes 3,020 reviewed artwork families (882 item and
+2,138 world-object families), each at 64/32/16 px with approved material masks.
 Exact native metadata selects the artwork; ambiguous or unavailable matches
 retain the existing icon. New artwork continues in the separate development
 library. Masters, source references and unfinished masks are excluded from ZIPs.

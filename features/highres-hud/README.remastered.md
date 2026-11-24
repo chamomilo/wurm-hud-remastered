@@ -4,6 +4,29 @@ Double-click a recognized world container to run the native Open action. World
 and Select tooltips no longer ask for weight. Inventory and container-window
 rows still show the weight supplied by the server.
 
+## Fighting HUD in 0.10.4
+
+Offered and active special moves have pictograms for their native move IDs.
+Automatic combat shows a readiness pictogram before a move starts. A sickle
+uses dedicated artwork where available. Hover for the move's effects, wind-up,
+estimated success chance and stamina cost.
+
+## Performance recorder
+
+Open **Performance recorder** from the in-game main menu. Select **Start
+recording** to sample Windows process CPU, memory and available GPU and paging
+counters once a second. The recorder continues when the window is closed.
+Reopen it and select **Stop recording** to finish, or let it stop automatically
+after 15 minutes. Each session has a UTC-stamped folder under
+`%USERPROFILE%\.chamomilo\wurm-hud-remastered\diagnostics`. The same folder
+contains `frame-timings.csv` with UTC end times and durations in nanoseconds for
+frame intervals, frame rendering, the client tick, world rendering, HUD window preparation, map
+refreshes, map drawing, and window output. `gc-pauses.csv` records JVM garbage
+collection events with UTC start and end times and durations in milliseconds.
+Frame intervals measure time between frame starts. The other measurements can
+overlap and should be compared individually. For a freeze or black scene, note
+the approximate time and whether the HUD stayed visible.
+
 ## Remastered 0.9.4
 
 Visible gems and eligible inventory or container items, including tools, are

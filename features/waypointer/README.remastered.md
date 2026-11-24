@@ -1,5 +1,10 @@
 # Waypointer in Wurm HUD Remastered
 
+In 0.10.4, Waypointer reuses unchanged marker lists and updates terrain chunks
+affected by incoming tile data. Every second it also checks a 7 × 7 area
+around each loaded player and the tile under each loaded creature, including
+neighboring tiles needed to render local changes.
+
 ## Remastered 0.9.4
 
 Surface navigation lines stay visible through trees and shrubs, with terrain
